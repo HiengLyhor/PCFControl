@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+  <control namespace="CrmLookupDropdown" constructor="LookupDropdownConstructor" version="0.0.2"
+    display-name-key="Lookup to Dropdown Final"
+    description-key="Convert a lookup field into a dropdown" control-type="standard">
+
+    <!-- External service usage -->
+    <external-service-usage enabled="false">
+    </external-service-usage>
+    <!-- End External service usage -->
+
+    <!-- Property for the control -->
+    <property name="dynamicLookup" display-name-key="Lookup to Dropdown Setup"
+      description-key="Convert from lookup interface to dropdown interface" of-type="Lookup.Simple"
+      usage="bound"
+      required="true" />
+
+    <property name="displayValue" display-name-key="Display Field"
+      description-key="Display for appear in the interface, eg. accountnumber"
+      of-type="SingleLine.Text" usage="input" required="true" />
+    <!-- End Property for the control -->
+
+    <!-- Resource files  -->
+    <resources>
+      <code path="index.ts" order="1" />
+      <css path="css/MyStyle.css" order="1" />
+    </resources>
+    <!-- End Resource files  -->
+
+    <!-- Dependencies -->
+    <feature-usage>
+      <uses-feature name="Utility" required="true" />
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+    <!-- End Dependencies -->
+
+  </control>
+</manifest>
